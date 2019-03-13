@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义SuperType
+        function SuperType () {
+            this.colors = ['red', 'blue', 'blue'];
+        }
+        // 定义SubType
+        function SubType () {
+            SuperType.call(this);
+        }
+
+        var instance1 = new SubType();
+        instance1.colors.push('gray');
+        console.log(instance1.colors);
+        var instance2 = new SubType();
+        console.log(instance2.colors);
+    </script>
+</body>
+</html>

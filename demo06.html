@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义SuperType
+        function SuperType () {
+            this.property = true;
+        }
+        SuperType.prototype.getSuperValue = function () {
+            return this.property;
+        }
+        // 定义SubType
+        function SubType () {
+            this.subproperty = false;
+        }
+        // 继承SuperType
+        SubType.prototype = new SuperType();
+        SubType.prototype.getSubValue = function () {
+            return this.subproperty;
+        }
+
+        var instance = new SubType();
+        console.log(instance, new SuperType());
+        console.log(instance.getSuperValue());
+    </script>
+</body>
+</html>
